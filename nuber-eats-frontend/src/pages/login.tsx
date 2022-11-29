@@ -25,7 +25,9 @@ export const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm<ILoginForm>()
-  const [loginMutation, { loading, error, data }] = useMutation(LOGIN_MUTATION)
+
+  const [loginMutation] = useMutation(LOGIN_MUTATION)
+
   const onSubmit = () => {
     const { email, password } = getValues()
     loginMutation({
